@@ -7,13 +7,16 @@ SetNumLockState AlwaysOff
 if (FileExist("Script.ico")) {
      Menu, Tray, Icon, Script.ico
 }
-OSD_spawn("AHK starting up..")
+Global OSD_BG:=0x361D37
+Global OSD_FG:=0xF4F3F2
+
+showOSD("VMR-Volumeonly Activated")
 
 ;===============================================Media Hotkeys===============================================
 Volume_Up::showOSD("Gain: " . VMR_incGain(,1) ) ;Increase Bus[0] gain
 Volume_Down::showOSD("Gain: " . VMR_decGain(,1)) ;Decrease Bus[0] gain
 
 ;=============================================Functions=============================================
-showOSD(txt, OSD_Theme:=-1, OSD_Accent:=-1 ){
-     OSD_spawn(txt,OSD_Theme,OSD_Accent)
+showOSD(txt){
+     OSD_spawn(txt,OSD_BG,OSD_FG)
 }
