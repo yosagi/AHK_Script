@@ -3,7 +3,7 @@
 #Include <RapidHotkey>
 #Include <OSD>
 SendMode Input
-SetNumLockState AlwaysOff
+SetNumLockState AlwaysOn
 if (FileExist("Script.ico")) {
      Menu, Tray, Icon, Script.ico
 }

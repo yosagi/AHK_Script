@@ -32,9 +32,9 @@ OSD_getSysTheme(){
 OSD_getSysAccent(){
     RegRead, OSD_sysAccent, HKCU\SOFTWARE\Microsoft\Windows\DWM, ColorizationColor 
     SetFormat, integer, hex
-    OSD_sysAccent := OSD_sysAccent+0
-    StringRight, OSD_sysAccent, OSD_sysAccent, 6
-    Return OSD_sysAccent
+    OSD_sysAccentHex := OSD_sysAccent+0
+    StringRight, OSD_sysAccentRGB, OSD_sysAccentHex, 6
+    Return OSD_sysAccentRGB
 }
 OSD_destroy(){
     Gui, Destroy
